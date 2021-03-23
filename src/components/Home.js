@@ -13,7 +13,7 @@ const Home = () =>{
             src='./Assets/Pizza.jpg' 
             alt=''           
           />
-          <Link to='/Form'>
+          <Link to='/Pizza'>
             <button           
               className='md-button shop-button'
             >
