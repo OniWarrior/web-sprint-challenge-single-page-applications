@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from 'react-router-dom'
+
 
 
 const Pizza = (props)=> {
@@ -50,11 +52,14 @@ const Pizza = (props)=> {
             <h2>Build your own pizza</h2>
 
           </div>
-          
 
-        <div className='button-header'>
-           <button disabled={disabled}>submit</button>        
-        </div>
+          <Link to={`/Confirmation`}>
+            <div className='button-header'>          
+              <button disabled={disabled}>Add to order</button>                     
+             </div>   
+                   
+          </Link>
+       
          <div className='errors'>          
            <div>{errors.name}</div>
            <div>{errors.size}</div>                  
@@ -221,10 +226,15 @@ const Pizza = (props)=> {
           />
         </label>            
        </div>
+
+
+       
       </div>
     </form>
 
     )
+
+    
 
 
 }

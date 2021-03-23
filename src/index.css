@@ -64,7 +64,15 @@ nav {
   border:1px solid #1c5d76;
   
 }
+.confirmation-container{
+  background-color: black;
+  color:#1c5d76;
+}
 
+
+.customer-header{
+  background-color:rgb(54, 2, 75);
+}
 .customer-name{
   
   border:1px solid #1c5d76;
@@ -151,14 +159,14 @@ nav {
 }
 
 
-button {
+.button-header > button {
   color: green;
   background-color: #1c5d76;
   border: 1px solid green;
   border-radius: 10%;
   
 }
-    button:disabled {
+    .button-header > button:disabled {
     cursor: not-allowed;
     color: darkgray;
     border-color: darkgray;
@@ -168,3 +176,44 @@ button {
   border-radius: 10%;
 
   }
+
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+  }
+
+  .centered > h2{
+    color: #1c5d76;
+  }
+
+  .order-card{
+    border:1px solid #1c5d76;
+    margin-left:25%;
+    margin-right:25%;
+  }
+
+  .order-size-header{
+    background-color:rgb(54, 2, 75);
+  }
+  .order-size{
+    border:1px solid #1c5d76;
+    
+  }
+
+  .order-sauce-header{
+    background-color:rgb(54, 2, 75);
+  }
+
+  .order-sauce{
+    border:1px solid #1c5d76;
+    
+  }
+
+  .order-topping-header{
+    background-color:rgb(54, 2, 75);
+  }
+ 

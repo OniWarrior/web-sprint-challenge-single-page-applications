@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react'
 import * as yup from 'yup'
 import axios from 'axios'
 import formSchema from '../validation/formSchema'
+import Confirmation from './Confirmation.js'
 
 
 const initialFormValues = {
@@ -38,6 +39,7 @@ const App = () => {
   const postNewOrder = newOrder => {    
       axios.post('https://reqres.in/api/users', newOrder)
         .then(res => {
+          console.log(newOrder)
           setOrders([res.data, ...orders])
         })
         .catch(err => {
@@ -72,9 +74,11 @@ const App = () => {
         toppings: ['pepperoni', 'sausage', 
                   'canadian bacon','grilled chicken'].filter(topping => formValues[topping]),
         specialInstructions:formValues.specialInstructions.trim()          
-      }
-      
+      }      
       postNewOrder(newOrder)
+
+     
+     
     }      
     
   
@@ -95,27 +99,26 @@ const App = () => {
             </Link>
             </div>
           </ul> 
-        </nav>
-
-       
-     
-     
-        
+        </nav>        
       
       <Switch>
         <Route exact path="/">
           <Home/>
         </Route>   
-        <Route to='/Pizza'>
-        <Pizza
-        values={formValues}
-        change={inputChange}
-        submit={formSubmit}
-        disabled={disabled}
-        errors={formErrors}
-      />
-        </Route>     
+        <Route path='/Pizza'>
+          <Pizza
+          values={formValues}
+          change={inputChange}
+          submit={formSubmit}
+          disabled={disabled}
+          errors={formErrors}
+          />
+        </Route>   
+        <Route path='/Confirmation' component={Confirmation}>
+          <Confirmation order={formValues}/>
+        </Route>
       </Switch>
+      
     </div>
   );
 };
